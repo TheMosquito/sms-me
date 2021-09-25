@@ -1,6 +1,8 @@
 # sms-me
 
-Sends an SMS message to the specified phone number stating its IP address
+Sends an SMS message to the specified phone (SMS) number stating the IP address of the specified interface.
+
+Uses the [Sinch](https://www.sinch.com/) service. Visit that site and create a free account, then get your SERVICE_PLAN_ID, API_TOKEN, and a SENDER_SMS_NUMBER, that you wil need below.
 
 ## Usage:
 
@@ -9,7 +11,8 @@ Sends an SMS message to the specified phone number stating its IP address
 ```
 SERVICE_PLAN_ID (your sinch plan ID)
 API_TOKEN (your sinch API token)
-INTERFACE_NAME (the interface whose address you want to know)
+SENDER_SMS_NUMBER (any of the virtual numbers or real numbers on your sinch account)
+INTERFACE_NAME (the network interface whose IP address you want to know)
 TARGET_SMS_NUMBER (the target SMS number where the message will be sent)
 ```
 
