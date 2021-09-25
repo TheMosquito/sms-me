@@ -4,7 +4,7 @@ NAME:="sms-me"
 VERSION:="1.0.0"
 
 
-# The SMS message will conatain the LAN IP address assigned to this interface
+# The SMS message will contain the LAN IP address assigned to this interface
 INTERFACE_NAME:=eth0
 
 
