@@ -2,7 +2,7 @@
 
 Sends an SMS message to the specified phone (SMS) number stating the IP address of the specified interface.
 
-Uses the [Sinch](https://www.sinch.com/) service. Visit that site and create a free account, then get your SERVICE_PLAN_ID, API_TOKEN, and a SENDER_SMS_NUMBER, that you wil need below.
+Uses the [Sinch](https://www.sinch.com/) service. Visit that site and create a free account, then get your SERVICE_PLAN_ID, API_TOKEN, and a SENDER_SMS_NUMBER, that you will need below.
 
 ## Usage:
 
@@ -22,8 +22,6 @@ TARGET_SMS_NUMBER (the target SMS number where the message will be sent)
 
 ## Notes:
 
-The container will send the LAN IP address message once on startup, then it will sleep forever. If it is restarted, e.g., after a power cycle, it will send a new message (possibly with a new IP address since the local DHCP server may assign a new one). It is dumber than you might want it to be since it does not monitor the IP address to see if it has changed over time. But a reboot should fix it if its IP address changes. If anyone wanted to submit a PR that does that monitoring, that would be cool. :-) 
-Provide these environment variables in the container environment:
+This container will send the LAN IP address message once on startup, then it will sleep forever. If it is restarted (e.g., after a power cycle) it will send a new message (possibly with a new IP address since the local DHCP server may assign it a new one). This code is dumber than you might want it to be since it does not monitor the IP address to see if it has changed over time. But a reboot should fix it if its IP address changes. If anyone wanted to submit a PR that does that monitoring and automates sending a new message, that would be cool. :-) 
 
-The `docker run` command must include the `--net=host` flag so the container can discern the LAN IP address assigned to the specified INTERFACE_NAME (using `ifconfig` from the `net-tools` debian package)..
-
+The `docker run` command must include the `--net=host` flag so the container can discern the LAN IP address assigned to the specified INTERFACE_NAME.
